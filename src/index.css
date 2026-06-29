@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-title: "Plus Jakarta Sans", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Base style edits */
+html {
+  scroll-behavior: smooth;
+  background-color: #030712;
+  color: #f3f4f6;
+  font-family: var(--font-sans);
+}
+
+/* Custom gorgeous scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #8B5CF6, #C084FC);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #a78bfa, #d8b4fe);
+}
+
+/* Glowing text and items */
+.glow-text-blue {
+  text-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+.glow-text-purple {
+  text-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
+}
+
+.glassmorphism {
+  background: rgba(10, 10, 25, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glassmorphism-hover:hover {
+  background: rgba(15, 15, 35, 0.75);
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+.glow-accent-btn {
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+}
+
+.glow-accent-btn:hover {
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.7);
+}
+
+/* Custom Background mesh animation */
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.4;
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.15);
+    opacity: 0.6;
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+    opacity: 0.5;
+  }
+}
+
+@keyframes float-blue {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(80px, 60px) scale(1.2);
+  }
+}
+
+@keyframes float-pink {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1.15);
+  }
+  50% {
+    transform: translate(-60px, -80px) scale(0.9);
+  }
+}
+
+.animate-glow-slow-1 {
+  animation: pulseGlow 15s infinite ease-in-out;
+}
+
+.animate-glow-slow-2 {
+  animation: pulseGlow 18s infinite ease-in-out alternate;
+}
+
+.animate-float-blue {
+  animation: float-blue 20s infinite ease-in-out;
+}
+
+.animate-float-pink {
+  animation: float-pink 22s infinite ease-in-out;
+}
+
+.timeline-line {
+  background: linear-gradient(180deg, #8B5CF6 0%, #C084FC 100%);
+}
